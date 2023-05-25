@@ -1,0 +1,11 @@
+(executable
+ (public_name tern)
+ (name main)
+ (preprocess (pps ppx_deriving_yojson))
+ (libraries 
+   core_unix.command_unix
+   core_unix.time_unix
+   printbox
+   printbox-text
+   yojson ppx_deriving_yojson.runtime
+   tern eio_main core))
