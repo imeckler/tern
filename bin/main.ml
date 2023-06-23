@@ -216,6 +216,7 @@ module Tern = struct
           ; last_modified=
               Int.of_string (Eio.Path.load (handle ^/ "latest"))
           } )
+    |> List.sort ~compare:(fun p1 p2 -> -(Int.compare p1.last_modified p2.last_modified))
 end
 
 (* Syntax is
